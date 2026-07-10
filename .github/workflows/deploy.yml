@@ -1,0 +1,29 @@
+name: Deploy to Hetzner
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /ruta/a/tu/proyecto
+            git pull origin main
+            npm install
+            npm run build
+            # Ajusta la siguiente línea dependiendo de cómo corres tu servidor:
+            pm2 restart busca-software || pm2 start npm --name "busca-software" -- run start
