@@ -193,7 +193,7 @@ export default async function Home(props: { searchParams?: Promise<{ [key: strin
                         <Link href={`/software/${item.id}`} className="flex items-center justify-center py-3 rounded-xl bg-slate-50 border border-slate-200 hover:bg-blue-50 hover:border-blue-200 hover:text-blue-700 text-slate-700 text-sm font-bold transition-all text-center">
                           Análisis
                         </Link>
-                        <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-md text-center group/btn">
+                        <a href={item.url} target="_blank" rel="noopener noreferrer" data-track-click={item.name} className="flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-md text-center group/btn">
                           Sitio Web
                           <svg className="w-4 h-4 opacity-80 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>

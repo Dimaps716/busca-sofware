@@ -68,7 +68,7 @@ export default async function SoftwarePage({ params }: { params: Promise<{ id: s
             </div>
             Volver al Directorio
           </Link>
-          <a href={software.url} target="_blank" rel="noopener noreferrer"
+          <a href={software.url} target="_blank" rel="noopener noreferrer" data-track-click={software.name}
              className="hidden md:flex items-center gap-2 px-6 py-2.5 rounded-full bg-slate-900 hover:bg-blue-600 text-white text-sm font-bold transition-all shadow-md hover:shadow-xl hover:-translate-y-0.5">
             Visitar sitio oficial
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -138,7 +138,7 @@ export default async function SoftwarePage({ params }: { params: Promise<{ id: s
                   </div>
                 )}
                 
-                <a href={software.url} target="_blank" rel="noopener noreferrer"
+                <a href={software.url} target="_blank" rel="noopener noreferrer" data-track-click={software.name}
                    className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1">
                   Visitar Sitio Oficial
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -342,7 +342,7 @@ export default async function SoftwarePage({ params }: { params: Promise<{ id: s
                   </div>
                   
                   <div className="pt-6 mt-6 border-t border-slate-100">
-                    <a href={software.url} target="_blank" rel="noopener noreferrer"
+                    <a href={software.url} target="_blank" rel="noopener noreferrer" data-track-click={software.name}
                        className="flex items-center justify-center w-full px-6 py-4 bg-slate-900 hover:bg-blue-600 text-white rounded-xl font-bold transition-all shadow-md hover:shadow-xl hover:-translate-y-1">
                       Probar {software.name}
                     </a>
