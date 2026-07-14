@@ -1,6 +1,6 @@
 import SoftwareLogo from "../../SoftwareLogo";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import type { Metadata } from "next";
 
 export const revalidate = 0; // disabled cache temporarily to see changes
@@ -42,7 +42,7 @@ export default async function SoftwarePage({ params }: { params: Promise<{ id: s
   const { id } = await params;
   const software = await getSoftwareDetails(id);
 
-  if (!software) notFound();
+  if (!software) redirect('/?welcome=true');
 
   const content = software.content_json || {};
   const hero = content.hero || {};

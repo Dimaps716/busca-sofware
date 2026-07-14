@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SoftwareLogo from "./SoftwareLogo";
+import WelcomeBanner from "./WelcomeBanner";
 
 export const revalidate = 0; // disabled cache to allow search
 
@@ -35,6 +36,7 @@ export default async function Home(props: { searchParams?: Promise<{ [key: strin
   const searchParams = await props.searchParams;
   const q = typeof searchParams?.q === 'string' ? searchParams.q : '';
   const sort = typeof searchParams?.sort === 'string' ? searchParams.sort : 'relevance';
+  const showWelcome = searchParams?.welcome === 'true';
   
   const software = await getSoftware(q, sort);
 
@@ -60,6 +62,8 @@ export default async function Home(props: { searchParams?: Promise<{ [key: strin
           </nav>
         </div>
       </header>
+
+      <WelcomeBanner show={showWelcome} />
 
       {/* --- HERO SECTION --- */}
       <main className="bg-white border-b border-slate-200 relative overflow-hidden">
